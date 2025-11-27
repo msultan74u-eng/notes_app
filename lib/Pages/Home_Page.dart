@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notes App '),
+        title: Text('Notes App ',style: TextStyle(color: Colors.indigoAccent),),
       ),
 
     );
