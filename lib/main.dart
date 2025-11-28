@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'Pages/Home_Page.dart';
+import 'Views/Home_Page.dart';
+
+
 
 void main() {
   runApp(const NotesApp());
@@ -13,6 +15,9 @@ class NotesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {HomePage.id: (context) => HomePage()},
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(brightness: Brightness.dark,fontFamily: 'Poppins'),
+
       initialRoute: HomePage.id,
     );
   }
