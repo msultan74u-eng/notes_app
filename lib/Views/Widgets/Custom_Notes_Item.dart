@@ -23,14 +23,14 @@ class CustomNotesItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 26,
                   color: Colors.black,
-                  fontWeight: FontWeight.bold,
+                  // fontWeight: FontWeight.bold,
                 ),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Text(
                   'You`re Better than that...Give me some sunshine ..Give me some rain..',
-                  style: TextStyle(color: Colors.black38, fontSize: 18),
+                  style: TextStyle(color: Colors.black38, fontSize: 16),
                 ),
               ),
               trailing: IconButton(
