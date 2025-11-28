@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/Views/Widgets/Custom_AppBar.dart';
 
 import 'Widgets/Custom_Notes_Item.dart';
+import 'Widgets/Custom_Notes_ListView.dart';
 import 'Widgets/Notes_View_Body.dart';
 
 class HomePage extends StatelessWidget {
@@ -17,7 +18,9 @@ class HomePage extends StatelessWidget {
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CustomAppbar(),
-            CustomNotesItem(),
+            Expanded(
+              child: CustomNotesListview(),
+            ),
           ],
         ),
       ),
