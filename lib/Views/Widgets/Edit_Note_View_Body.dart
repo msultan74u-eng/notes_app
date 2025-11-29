@@ -14,12 +14,12 @@ class EditNoteViewBody extends StatelessWidget {
           child: CustomAppbar(
             title: 'Edit Note',
             icon: Icon(Icons.check, size: 28),
-          )
+          ),
         ),
-        SizedBox(height: 50,),
-        CustomTextField(hintText: 'Title'),
-        CustomTextField(hintText: 'Content',maxLines: 5,),
-      ]
+        SizedBox(height: 50),
+        CustomTextField(hintText: 'Title',),
+        CustomTextField(hintText: 'Content', maxLines: 5,),
+      ],
     );
   }
 }
