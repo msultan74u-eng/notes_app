@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,23 +11,21 @@ class AddModalBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: BlocConsumer<AddNotesCubit, AddNotesState>(
-          listener: (context, state) {
-            if (state is AddNotesFailure) {print('Failed ${state.errMessage}');}
-            if (state is AddNotesSuccess) {
-              Navigator.pop(context);
-            }
-          },
-          builder: (context, state){
-               return ModalProgressHUD(
-                   inAsyncCall: state is AddNotesLoading ? true : false,
-                   child: AddNoteForm()
-               );
-          }
-    ));
+    return BlocConsumer<AddNotesCubit, AddNotesState>(
+      listener: (context, state) {
+        if (state is AddNotesFailure) {
+          print('Failed ${state.errMessage}');
+        }
+        if (state is AddNotesSuccess) {
+          Navigator.pop(context);
+        }
+      },
+      builder: (context, state) {
+        return ModalProgressHUD(
+          inAsyncCall: state is AddNotesLoading ? true : false,
+          child: SingleChildScrollView(child: AddNoteForm()),
+        );
+      },
+    );
   }
 }
-
-
-
