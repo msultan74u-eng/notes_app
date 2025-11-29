@@ -13,11 +13,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 35, 16, 0),
+        padding: const EdgeInsets.fromLTRB(16, 45, 16, 0),
         child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomAppbar(),
+            CustomAppbar(title: 'Notes',icon: Icon(Icons.search,size: 28,),),
             Expanded(
               child: NotesViewBody(),
             ),
