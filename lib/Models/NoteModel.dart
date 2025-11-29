@@ -3,7 +3,7 @@ part 'NoteModel.g.dart';
 
 ///                                  ///    ForGenerate Build code
 ///                                  → flutter packages pub run build_runner build
-///                                  → flutter packages pub run build_runner watch
+///                               Important
 
 
 @HiveType(typeId: 0)
