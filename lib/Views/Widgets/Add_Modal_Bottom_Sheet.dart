@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 
+import 'Custom_Button.dart';
 import 'Custom_Text_Field.dart';
 
 class AddModalBottomSheet extends StatelessWidget {
@@ -9,13 +10,18 @@ class AddModalBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(height: 32),
-        CustomTextField(hintText: 'Title',),
-        CustomTextField(hintText: 'Content',maxLines: 5,),
-
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          SizedBox(height: 32),
+          CustomTextField(hintText: 'Title',),
+          CustomTextField(hintText: 'Content',maxLines: 5,),
+          SizedBox(height: 32),
+          CustomButton(),
+      
+      
+        ],
+      ),
     );
   }
 }
