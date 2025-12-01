@@ -28,7 +28,10 @@ class AddModalBottomSheet extends StatelessWidget {
           return AbsorbPointer(
             absorbing: state is AddNotesLoading ? true : false,
             // absorbing: true,
-            child: SingleChildScrollView(child: AddNoteForm()),
+            child: Padding(
+              padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+              child: SingleChildScrollView(child: AddNoteForm()),
+            ),
           );
         },
       ),
