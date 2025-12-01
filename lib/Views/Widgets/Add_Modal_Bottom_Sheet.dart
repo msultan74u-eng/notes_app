@@ -25,8 +25,9 @@ class AddModalBottomSheet extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return ModalProgressHUD(
-            inAsyncCall: state is AddNotesLoading ? true : false,
+          return AbsorbPointer(
+            absorbing: state is AddNotesLoading ? true : false,
+            // absorbing: true,
             child: SingleChildScrollView(child: AddNoteForm()),
           );
         },
