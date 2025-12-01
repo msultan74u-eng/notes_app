@@ -39,12 +39,12 @@ class CustomNotesItem extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 10),
                   child: Text(
                     note.subtitle,
-                    style: TextStyle(color: Colors.black38, fontSize: 16),
+                    style: TextStyle(color: Colors.black54, fontSize: 16),
                   ),
                 ),
                 trailing: IconButton(
                   onPressed: () {
-
+                    note.delete();
                   },
                   icon: Icon(Icons.delete, color: Colors.black),
                   iconSize: 30,
@@ -57,14 +57,14 @@ class CustomNotesItem extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
                         child: Text(
-                          note.date.substring(11, 16),
+                          note.date.substring(0,5),
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
                         child: Text(
-                          note.date.substring(0, 10),
+                          note.date.substring(6, 16),
                           style: TextStyle(color: Colors.black),
                         ),
                       ),
