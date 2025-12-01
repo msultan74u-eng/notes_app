@@ -7,18 +7,33 @@ import '../../Constants/Constants.dart';
 
 part 'read_notes_state.dart';
 
+// class ReadNotesCubit extends Cubit<ReadNotesState> {
+//   ReadNotesCubit() : super(ReadNotesInitial());
+//
+//   List<Notemodel>? notes;
+//
+//   fetchNotes() async {
+//     var noteBox = Hive.box<Notemodel>(kNotesBox);
+//     notes = noteBox.values.toList();
+//     emit(ReadNotesSuccess(notes!));
+//   }
+// }
+
+
+
 class ReadNotesCubit extends Cubit<ReadNotesState> {
-  ReadNotesCubit() : super(ReadNotesInitial());
-
-  fetchNotes() async {
-    try {
-      var noteBox = Hive.box<Notemodel>(kNotesBox);
-      List<Notemodel> notes = noteBox.values.toList();
-      emit(ReadNotesSuccess(notes));
-    } catch (e) {
-      emit(ReadNotesFailure(e.toString()));
-    }
-
+  ReadNotesCubit() : super(ReadNotesInitial()) {
+    fetchNotes(); // يتم استدعاؤها تلقائيًا مرة واحدة
   }
 
+  List<Notemodel>? notes;
+
+  Future<void> fetchNotes() async {
+    // emit(ReadNotesLoading());
+
+    var noteBox = Hive.box<Notemodel>(kNotesBox);
+    notes = noteBox.values.toList();
+
+    emit(ReadNotesSuccess(notes!));
+  }
 }

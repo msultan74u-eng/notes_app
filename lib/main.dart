@@ -41,3 +41,10 @@ class NotesApp extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+// BlocProvider.of<ReadNotesCubit>(context).fetchNotes();
