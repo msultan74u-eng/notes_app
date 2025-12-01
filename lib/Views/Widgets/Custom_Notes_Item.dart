@@ -4,10 +4,9 @@ import '../../Models/NoteModel.dart';
 import '../Edit_Note_View.dart';
 
 class CustomNotesItem extends StatelessWidget {
-  const CustomNotesItem({super.key,required this.note});
+  const CustomNotesItem({super.key, required this.note});
 
   final Notemodel note;
-
 
   @override
   Widget build(BuildContext context) {
@@ -44,21 +43,36 @@ class CustomNotesItem extends StatelessWidget {
                   ),
                 ),
                 trailing: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+
+                  },
                   icon: Icon(Icons.delete, color: Colors.black),
                   iconSize: 30,
                 ),
+              ),
+              Row( mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
+                        child: Text(
+                          note.date.substring(11, 16),
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
+                        child: Text(
+                          note.date.substring(0, 10),
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
 
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 12, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text('${note.date.substring(0, 10)}', style: TextStyle(color: Colors.black)),
-                  ],
-                ),
-              ),
             ],
           ),
         ),
